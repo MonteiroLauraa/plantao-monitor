@@ -50,3 +50,23 @@ O sistema opera de forma distribuída. É necessário rodar os 3 serviços simul
 npm install
 node api.js
 # Servidor rodará em http://localhost:8000
+```
+
+###Passo 2: Front
+```Bash
+
+cd plantao-monitor-front
+npm install
+npm run dev
+
+# Acesse em http://localhost:5173
+```
+
+###Passo 3: Runner 
+```Bash
+
+# Na raiz do projeto
+pip install psycopg2-binary python-dotenv schedule
+python runner.py
+# O robô iniciará o ciclo de monitoramento
+```
