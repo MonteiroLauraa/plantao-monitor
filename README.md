@@ -1,16 +1,51 @@
-# React + Vite
+#  Plantão Monitor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema Fullstack de Monitoramento de Banco de Dados, Gestão de Incidentes e Escalas de Plantão.
+---
 
-Currently, two official plugins are available:
+## Funcionalidades Entregues (Sprint 1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Backend & API (Node.js)
+- **API RESTful** robusta com Express.
+- **Autenticação Híbrida:** Firebase (Identidade) + PostgreSQL (Perfil & RBAC).
+- **CRUD Genérico:** Arquitetura flexível para gestão de entidades.
+- **Auditoria:** Sistema de Logs automático para rastreabilidade de ações (Admin/Operador).
 
-## React Compiler
+### 2. Frontend (React + Vite)
+- **SPA :** Navegação fluida sem recarregamento.
+- **RBAC Visual:** Menus e rotas protegidas dinamicamente (Admin vs. Operador).
+- **Dashboard Real-time:** Atualização automática de incidentes (Polling).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. Automação (Python Runner)
+- **Service Worker:** Script Python independente.
+- **Cron Job:** Execução agendada de regras SQL a cada 60 segundos.
+- **Detecção de Anomalias:** Geração automática de incidentes baseada em queries.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Camada | Tecnologia | Função |
+| :--- | :--- | :--- |
+| **Frontend** | React.js, Vite, Axios | Interface do Usuário |
+| **Backend** | Node.js, Express | API Gateway e Regras de Negócio |
+| **Worker** | Python, Psycopg2, Schedule | Processamento em Background |
+| **Database** | PostgreSQL | Persistência Relacional |
+| **Auth** | Firebase Auth | Segurança e Tokens JWT |
+
+---
+
+##  Como Rodar o Projeto
+
+O sistema opera de forma distribuída. É necessário rodar os 3 serviços simultaneamente.
+
+### Pré-requisitos
+- Node.js v18+
+- Python 3.8+
+- PostgreSQL rodando localmente
+- Arquivo `.env` configurado na raiz
+
+### Passo 1: Backend (API)
+```bash
+# Na raiz do projeto
+npm install
+node api.js
+# Servidor rodará em http://localhost:8000
