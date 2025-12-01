@@ -23,7 +23,8 @@ Sistema Fullstack de Monitoramento de Banco de Dados, Gestão de Incidentes e Es
 
 ---
 
-##  Camada | Tecnologia | Função |
+## 
+ Camada | Tecnologia | Função |
 | :--- | :--- | :--- |
 | **Frontend** | React.js, Vite, Axios | Interface do Usuário |
 | **Backend** | Node.js, Express | API Gateway e Regras de Negócio |
