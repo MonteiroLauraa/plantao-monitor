@@ -1,0 +1,81 @@
+
+.cadastro-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;   
+    padding: 40px 20px;  
+    width: 100%;         
+}
+
+.cadastro-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+.cadastro-logo {
+    max-width: 200px; 
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.cadastro-card h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff; 
+    color: #333333;
+}
+
+.btn-cadastrar {
+    display: block; 
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    cursor: pointer;
+    margin-top: 1rem; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+    background-color: #218838; 
+}
+
+.link-voltar {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}

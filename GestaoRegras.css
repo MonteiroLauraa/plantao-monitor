@@ -1,0 +1,250 @@
+/* =========================================
+   LAYOUT GERAL E CONTAINER
+   ========================================= */
+.page-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #e6edf3;
+}
+
+/* =========================================
+   CABEÇALHO (HEADER)
+   ========================================= */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.header-flex h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.header-flex small {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   BOTÕES GERAIS (Topo da página)
+   ========================================= */
+.actions-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-modern {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-modern:hover {
+    background: #30363d;
+    border-color: #8b949e;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background: #238636;
+    color: #ffffff;
+    border: 1px solid rgba(240, 246, 252, 0.1);
+}
+
+.btn-primary:hover {
+    background: #2ea043;
+}
+
+/* =========================================
+   TABELA (Correção de Layout)
+   ========================================= */
+.custom-table {
+    width: 100%;
+    /* 'auto' permite que as colunas se ajustem ao conteúdo */
+    table-layout: auto;
+    border-collapse: collapse;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.custom-table th {
+    background: #21262d;
+    color: #8b949e;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #30363d;
+    white-space: nowrap;
+    /* Cabeçalhos não quebram linha */
+}
+
+.custom-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #30363d;
+    color: #c9d1d9;
+    vertical-align: middle;
+}
+
+.row-dimmed {
+    opacity: 0.6;
+}
+
+/* --- LÓGICA DE LARGURA DAS COLUNAS --- */
+
+/* 1. A coluna de Ações (última) deve ser justa e não quebrar linha */
+.custom-table th:last-child,
+.custom-table td:last-child {
+    width: 1%;
+    /* Força a ocupar o mínimo necessário */
+    white-space: nowrap;
+    /* Garante que os botões fiquem lado a lado */
+}
+
+/* 2. A primeira coluna (Nome) ocupa o resto do espaço */
+.custom-table th:first-child,
+.custom-table td:first-child {
+    width: auto;
+}
+
+/* =========================================
+   BOTÕES DENTRO DA TABELA (Ações)
+   ========================================= */
+.actions-cell {
+    display: flex;
+    flex-direction: row;
+    /* Garante linha horizontal */
+    align-items: center;
+    gap: 8px;
+    /* Espaço entre os botões */
+    justify-content: flex-start;
+}
+
+.btn-acao {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
+    /* Texto do botão nunca quebra */
+}
+
+.btn-acao:hover {
+    background: #30363d;
+    color: #ffffff;
+    border-color: #8b949e;
+    transform: translateY(-1px);
+}
+
+/* Estilo para botão de perigo (Apagar/Delete) dentro da tabela */
+.btn-acao.btn-danger {
+    color: #f85149;
+    border-color: rgba(240, 246, 252, 0.1);
+    background: transparent;
+}
+
+.btn-acao.btn-danger:hover {
+    background: #da3633;
+    color: #fff;
+    border-color: #da3633;
+}
+
+/* =========================================
+   FORMULÁRIOS (Nova Regra / Editar)
+   ========================================= */
+.regras-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.form-regra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #e6edf3;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+/* =========================================
+   UTILITÁRIOS E EXTRAS
+   ========================================= */
+.tag-custom {
+    display: inline-block;
+    background: #1f6feb;
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.role-select {
+    padding: 4px 8px;
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+}
